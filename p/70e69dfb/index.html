@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="自学,JavaScript,React,Node,">
+  <meta name="keywords" content="自学,Zookeeper,">
 
 
 
@@ -84,25 +84,28 @@
 
 
 
-<meta name="description" content="自学内容来自阮一峰的网络日志
-Github地址
-偶然在订阅的RSS上看到阮一峰老师的一个博文介绍这个Javascript全栈工程师培训的教程。正好想接触一下JavaScript前后端的东西，正好拿来一试。阮老师亲自讲的课自然是上不起的，只能苦哈哈地自学一下了。
-要是抱着学完就成为全栈工程师的目的，同学还是算了。毕竟几个小时就可以把教程过一遍了。不过强力推荐作为JavaScript的前后端开发的Ov">
+<meta name="description" content="由于工作需要，最近两天要了解了一下Apache的Zookeeper。趁着新学的热乎劲，想以初学者的角度基本介绍一下它们是什么，为什么需要他们，以及他们干什么的。至于怎么干的，如何配置等等这种深入的东西，我是不会说的。因为暂时还不知道。
+什么是ZooKeeper官方介绍英文版
+
+ZooKeeper is a distributed, open-source coordination service">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自学JavaScript全栈工程师培训教程">
-<meta property="og:url" content="https://blog.ubyte.me/p/f32b0be7/index.html">
+<meta property="og:title" content="什么是ZooKeeper">
+<meta property="og:url" content="https://blog.ubyte.me/p/70e69dfb/index.html">
 <meta property="og:site_name" content="UBYTE.ME">
-<meta property="og:description" content="自学内容来自阮一峰的网络日志
-Github地址
-偶然在订阅的RSS上看到阮一峰老师的一个博文介绍这个Javascript全栈工程师培训的教程。正好想接触一下JavaScript前后端的东西，正好拿来一试。阮老师亲自讲的课自然是上不起的，只能苦哈哈地自学一下了。
-要是抱着学完就成为全栈工程师的目的，同学还是算了。毕竟几个小时就可以把教程过一遍了。不过强力推荐作为JavaScript的前后端开发的Ov">
-<meta property="og:updated_time" content="2016-12-07T07:15:12.044Z">
+<meta property="og:description" content="由于工作需要，最近两天要了解了一下Apache的Zookeeper。趁着新学的热乎劲，想以初学者的角度基本介绍一下它们是什么，为什么需要他们，以及他们干什么的。至于怎么干的，如何配置等等这种深入的东西，我是不会说的。因为暂时还不知道。
+什么是ZooKeeper官方介绍英文版
+
+ZooKeeper is a distributed, open-source coordination service">
+<meta property="og:image" content="https://blog.ubyte.me/images/zookeeper/zkservice.jpg">
+<meta property="og:image" content="https://blog.ubyte.me/images/zookeeper/zknamespace.jpg">
+<meta property="og:updated_time" content="2016-12-09T10:58:20.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自学JavaScript全栈工程师培训教程">
-<meta name="twitter:description" content="自学内容来自阮一峰的网络日志
-Github地址
-偶然在订阅的RSS上看到阮一峰老师的一个博文介绍这个Javascript全栈工程师培训的教程。正好想接触一下JavaScript前后端的东西，正好拿来一试。阮老师亲自讲的课自然是上不起的，只能苦哈哈地自学一下了。
-要是抱着学完就成为全栈工程师的目的，同学还是算了。毕竟几个小时就可以把教程过一遍了。不过强力推荐作为JavaScript的前后端开发的Ov">
+<meta name="twitter:title" content="什么是ZooKeeper">
+<meta name="twitter:description" content="由于工作需要，最近两天要了解了一下Apache的Zookeeper。趁着新学的热乎劲，想以初学者的角度基本介绍一下它们是什么，为什么需要他们，以及他们干什么的。至于怎么干的，如何配置等等这种深入的东西，我是不会说的。因为暂时还不知道。
+什么是ZooKeeper官方介绍英文版
+
+ZooKeeper is a distributed, open-source coordination service">
+<meta name="twitter:image" content="https://blog.ubyte.me/images/zookeeper/zkservice.jpg">
 
 
 
@@ -130,13 +133,13 @@ Github地址
 
 
 
-  <link rel="canonical" href="https://blog.ubyte.me/p/f32b0be7/">
+  <link rel="canonical" href="https://blog.ubyte.me/p/70e69dfb/">
 
 
 
 
 
-  <title> 自学JavaScript全栈工程师培训教程 | UBYTE.ME </title>
+  <title> 什么是ZooKeeper | UBYTE.ME </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +269,7 @@ Github地址
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.ubyte.me/p/f32b0be7/">
+  <link itemprop="mainEntityOfPage" href="https://blog.ubyte.me/p/70e69dfb/">
 
   <span style="display:none" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Patrick Li Xiangqun (李祥群)">
@@ -290,7 +293,7 @@ Github地址
             
             
               
-                自学JavaScript全栈工程师培训教程
+                什么是ZooKeeper
               
             
           </h1>
@@ -303,8 +306,8 @@ Github地址
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-06T12:23:07+08:00">
-                2016-12-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-09T18:56:53+08:00">
+                2016-12-09
               </time>
             
 
@@ -319,8 +322,8 @@ Github地址
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/p/f32b0be7/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="p/f32b0be7/" itemprop="commentCount"></span>
+                <a href="/p/70e69dfb/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="p/70e69dfb/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -346,56 +349,29 @@ Github地址
       
 
       
-        <p>自学内容来自<a href="http://www.ruanyifeng.com/blog/2016/11/javascript.html" rel="external nofollow noopener noreferrer" target="_blank">阮一峰的网络日志</a></p>
-<p><a href="https://github.com/ruanyf/jstraining" rel="external nofollow noopener noreferrer" target="_blank">Github地址</a></p>
-<p>偶然在订阅的RSS上看到阮一峰老师的一个博文介绍这个Javascript全栈工程师培训的教程。正好想接触一下JavaScript前后端的东西，正好拿来一试。阮老师亲自讲的课自然是上不起的，只能苦哈哈地自学一下了。</p>
-<p>要是抱着学完就成为全栈工程师的目的，同学还是算了。毕竟几个小时就可以把教程过一遍了。不过强力推荐作为JavaScript的前后端开发的Overview来看。起码本人来说是获益匪浅的。<br><a id="more"></a></p>
-<hr>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>以下是整个教程的目录。在开始教程之前要<a href="https://github.com/ruanyf/jstraining/blob/master/docs/preparation.md" rel="external nofollow noopener noreferrer" target="_blank">准备好实验环境</a>，毕竟实践出真知，动手动脑才能记得牢。</p>
+        <p>由于工作需要，最近两天要了解了一下Apache的Zookeeper。趁着新学的热乎劲，想以初学者的角度基本介绍一下它们是什么，为什么需要他们，以及他们干什么的。至于怎么干的，如何配置等等这种深入的东西，我是不会说的。因为暂时还不知道。</p>
+<h2 id="什么是ZooKeeper"><a href="#什么是ZooKeeper" class="headerlink" title="什么是ZooKeeper"></a>什么是ZooKeeper</h2><p><a href="https://zookeeper.apache.org/doc/trunk/zookeeperOver.html" rel="external nofollow noopener noreferrer" target="_blank">官方介绍英文版</a></p>
 <blockquote>
-<h3 id="第一讲：前端开发的历史和趋势"><a href="#第一讲：前端开发的历史和趋势" class="headerlink" title="第一讲：前端开发的历史和趋势"></a>第一讲：<a href="https://github.com/ruanyf/jstraining/blob/master/docs/history.md" rel="external nofollow noopener noreferrer" target="_blank">前端开发的历史和趋势</a></h3><ol>
-<li>前端开发的历史演变</li>
-<li>前端 MVC 框架的兴起</li>
-<li>前后端分离</li>
-<li>全栈工程师</li>
-<li>前端开发的未来</li>
-</ol>
-<h3 id="第二讲：React-技术栈"><a href="#第二讲：React-技术栈" class="headerlink" title="第二讲：React 技术栈"></a>第二讲：<a href="https://github.com/ruanyf/jstraining/blob/master/docs/react.md" rel="external nofollow noopener noreferrer" target="_blank">React 技术栈</a></h3><ol>
-<li>React 的基本用法</li>
-<li>React 应用的架构</li>
-</ol>
-<h3 id="第三讲：Node-应用开发"><a href="#第三讲：Node-应用开发" class="headerlink" title="第三讲：Node 应用开发"></a>第三讲：<a href="https://github.com/ruanyf/jstraining/blob/master/docs/node.md" rel="external nofollow noopener noreferrer" target="_blank">Node 应用开发</a></h3><ol>
-<li>Node 的基本用法</li>
-<li>Restful API</li>
-<li>Express 框架搭建 Web 应用</li>
-</ol>
-<h3 id="第四讲：前端工程简介"><a href="#第四讲：前端工程简介" class="headerlink" title="第四讲：前端工程简介"></a>第四讲：<a href="https://github.com/ruanyf/jstraining/blob/master/docs/engineering.md" rel="external nofollow noopener noreferrer" target="_blank">前端工程简介</a></h3><ol>
-<li>持续集成</li>
-<li>静态代码检查</li>
-<li>单元测试</li>
-<li>功能测试</li>
-<li>持续集成服务 Travis CI</li>
-</ol>
+<p>ZooKeeper is a distributed, open-source coordination service for distributed applications. It exposes a simple set of primitives that distributed applications can build upon to implement higher level services for synchronization, configuration maintenance, and groups and naming.</p>
+<p>Zookeeper是针对大型分布式系统的高可靠的协调系统。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、命名服务、分布式同步、组服务等。</p>
 </blockquote>
-<p>如目录所示，整个教程就是关于JavaScript全栈开发的简介。先是讲前端开发 <em>是什么</em>，<em>从哪来</em>，<em>到哪去</em> 等终极问题，并介绍了几个知名的前端框架(<code>Backbone.js</code>，<code>Angular.js</code>，<code>Vue.js</code>)；然后着重地简单介绍了前端<code>React.js</code>的使用，应用架构的解决方案；接着就是介绍后端的<code>Node.js</code>搭建Web应用；最后就是工程相关的代码测试，质量检测，持续集成等概念以及相关工具。需要自己动手的小时贯穿始终，保证能亲自感受一下使用体验。</p>
-<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>这个教程虽然不能让人马上成为全栈工程师，但是能让人体会一下the meaning of <em>FULL STACK</em>,堪称短小精悍的教程。精炼的语言概括了各种框架，各种工具，各种服务的用途。简单来说就是，从前</p>
-<blockquote>
-<ul>
-<li>这些名字我都听过，就是不知道它们都是干嘛的。</li>
-<li>上网查一查吧。怎么介绍里又出现了新的不知道干嘛的东西。</li>
-<li>这个介绍太长了，看不下去了……</li>
-</ul>
+<p>初学的看到这几句话头都大了。这种解释言简意赅，就跟数学定义是的，背下来还行，至于说用来了解它到底是什么，还是算了吧。好，下面开始说人话。</p>
+<a id="more"></a>
+<p>从上面的说法，我们可以知道，ZooKeeper是个<strong>协调系统</strong>，目标<strong>服务对象</strong>是大型<strong>分布式</strong>系统, 提供的服务是<strong>一致性</strong>服务。一般一说到<strong>分布式</strong>，就会涉及很多个计算机一起合作工作，合作就需要互相沟通协调，而ZooKeeper就是用来提供这个沟通协调服务的。服务内容跟<strong>一致性</strong>有关，一致性就是一起合作的计算机在信息上保持一致。比如说上面提到的<em>配置服务</em>, 要保证素有计算机都有统一的系统配置。既然都是分布式系统了，协调工作什么的自己弄不就行了么，为什么需要ZooKeeper呢？</p>
+<h2 id="为什么需要ZooKeeper"><a href="#为什么需要ZooKeeper" class="headerlink" title="为什么需要ZooKeeper"></a>为什么需要ZooKeeper</h2><p>因为简单，可靠，快捷。分布式系统的协调工作是出了名的难搞，一不小心就出错，而且还不好调试。而且分布式系统的本意是<strong>使用</strong>分布式, 是想用分布式提供的好处优点，而不是<strong>实现</strong>分布式本身。像这种琐碎，难搞，还容易出错的部分，当然是用现成的服务好了。而ZooKeeper恰恰就是为此而生的，简单，可靠，快捷。毕竟是Apache名门之后。</p>
+<h2 id="ZooKeeper特点"><a href="#ZooKeeper特点" class="headerlink" title="ZooKeeper特点"></a>ZooKeeper特点</h2><h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3><p>值得一提的是ZooKeeper本身也是<strong>分布式</strong>的。</p>
+<p><img src="/images/zookeeper/zkservice.jpg" alt="zkservice"></p>
+<p>如上图所示， 上面的ZooKeeper Server(下面会简称位 <em>ZkServer</em> )构成了ZooKeeper服务，下面的 <em>Client</em> 就是服务的对象(某个分布式系统应用)。ZooKeeper做成分布式的原因当然也是冲着分布式的优点了，高性能，高可用性。说白了就是 <em>ZkServer</em> 多了力量大，而且不怕某个或某几个 <em>ZkServer</em> 挂掉，只要大多数 <em>ZkServer</em> 还在，照样提供服务。每个<em>Client</em>都是只连到单个的 <em>ZkServer</em>，如果这个连接断掉了，<em>Client</em> 会被连到其他 <em>ZkServer</em>。在 <em>ZkServer</em> 集群被启动的时候，会统一推举一位Leader,对应地其他 <em>ZkSever</em> 就会成为Follower。<em>Client</em> 写数据的请求会交给Leader同意处理然后广播给每个Follower，以保证数据的<strong>顺序一致性</strong>(这是ZooKeeper的一个特性，保证所有数据的更新顺序和他们被发送的顺序一致)。就是需要一个Leader主持一下，不然所有 <em>ZkServer</em> 分别接到写数据的请求，就没法知道谁先谁后了。最重要的是，如果Leader挂了，大家都会知道，然后会毫不犹豫地选举一位新Leader。</p>
+<h3 id="Data-Model"><a href="#Data-Model" class="headerlink" title="Data Model"></a>Data Model</h3><p>ZooKeeper每个 <em>ZkServer</em> 都会保存一份完整的数据(主要是用于协调<em>Client</em>的数据，状态信息，配置信息，位置信息等等)，这样才能保证每个<em>Client</em>都能得到完整的信息以相互合作。ZooKeeper采用了类似文件系统的数据结构来存储以上数据，如下图所示。</p>
+<p><img src="/images/zookeeper/zknamespace.jpg" alt="zknamespace"></p>
+<p>注意上图是每个 <em>ZkServer</em> 中保存的数据结构，每个节点叫做 <em>ZNode</em>。之前提到的各种信息就会存在对应的 <em>ZNode</em> 中。不用于文件系统的数据结构(存储在硬盘中)，这些信息占用空间小，说以会被直接存到<strong>Memory</strong>以实现高性能，低延迟。<em>Client</em> 读写的就是这些 <em>ZNode</em> 里面的数据，也可以增加或者删除相应的 <em>ZNode</em>。<em>Client</em> 还可以使用Watch监视某些 <em>ZNode</em> 如果对应的数据有变化， <em>Client</em> 会被通知到。</p>
+<h3 id="特性总结"><a href="#特性总结" class="headerlink" title="特性总结"></a>特性总结</h3><blockquote>
+<p>顺序一致性：<em>Client</em> 的更新顺序与更新被发送的顺序一致</p>
+<p>原子性：更新操作要么全部成功，要么全部失败</p>
+<p>单一系统视图：无论<em>Client</em> 连接到哪一个<em>ZkServer</em>，都可以看到相同的<em>ZNode</em>结构视图</p>
+<p>可靠性：一旦一个更新操作被应用，那么在<em>Client</em> 再次更新它之前，其值将不会被改变</p>
+<p>及时性：在特定的一段时间内，系统的任何变更都将被<em>Client</em> 检测到</p>
 </blockquote>
-<p>现在</p>
-<blockquote>
-<ul>
-<li>啊～原来是是这么回事啊！早这么说不就完了么！</li>
-</ul>
-</blockquote>
-<p>举个例子, 关于React的核心思想</p>
-<blockquote class="blockquote-center"><p>View 是 State 的输出，<code>view = f(state)</code><br>只要 State 发生变化，View 也要随之变化<br>React 的本质是将图形界面（GUI）函数化</p>
-</blockquote>
-<p>看了这几句话，顿时就明白了为啥React的State和Component之间的关系了。如何更新View也就一目了然了。以及后面的MobX架构和Redux架构也就不难理解了。学了这个教程，就不怕听不同别人在说什么了，也为进一步学习奠定了基础。期待能有更深入的教程。</p>
 
       
     </div>
@@ -421,11 +397,7 @@ Github地址
           
             <a href="/tags/自学/" rel="tag"># 自学</a>
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
-            <a href="/tags/React/" rel="tag"># React</a>
-          
-            <a href="/tags/Node/" rel="tag"># Node</a>
+            <a href="/tags/Zookeeper/" rel="tag"># Zookeeper</a>
           
         </div>
       
@@ -434,8 +406,8 @@ Github地址
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/p/4ae770f4/" rel="next" title="写在最开始">
-                <i class="fa fa-chevron-left"></i> 写在最开始
+              <a href="/p/f32b0be7/" rel="next" title="自学JavaScript全栈工程师培训教程">
+                <i class="fa fa-chevron-left"></i> 自学JavaScript全栈工程师培训教程
               </a>
             
           </div>
@@ -443,10 +415,6 @@ Github地址
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/p/70e69dfb/" rel="prev" title="什么是ZooKeeper">
-                什么是ZooKeeper <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -575,7 +543,7 @@ Github地址
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一讲：前端开发的历史和趋势"><span class="nav-number">1.1.</span> <span class="nav-text">第一讲：前端开发的历史和趋势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二讲：React-技术栈"><span class="nav-number">1.2.</span> <span class="nav-text">第二讲：React 技术栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三讲：Node-应用开发"><span class="nav-number">1.3.</span> <span class="nav-text">第三讲：Node 应用开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四讲：前端工程简介"><span class="nav-number">1.4.</span> <span class="nav-text">第四讲：前端工程简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#体会"><span class="nav-number">2.</span> <span class="nav-text">体会</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是ZooKeeper"><span class="nav-number">1.</span> <span class="nav-text">什么是ZooKeeper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么需要ZooKeeper"><span class="nav-number">2.</span> <span class="nav-text">为什么需要ZooKeeper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZooKeeper特点"><span class="nav-number">3.</span> <span class="nav-text">ZooKeeper特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式"><span class="nav-number">3.1.</span> <span class="nav-text">分布式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Model"><span class="nav-number">3.2.</span> <span class="nav-text">Data Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特性总结"><span class="nav-number">3.3.</span> <span class="nav-text">特性总结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -699,9 +667,9 @@ Github地址
 
     <script type="text/javascript">
       var disqus_shortname = 'ubyte';
-      var disqus_identifier = 'p/f32b0be7/';
+      var disqus_identifier = 'p/70e69dfb/';
 
-      var disqus_title = "自学JavaScript全栈工程师培训教程";
+      var disqus_title = "什么是ZooKeeper";
 
 
       function run_disqus_script(disqus_script) {
