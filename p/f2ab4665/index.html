@@ -106,7 +106,7 @@ Kafka 是一个分布式的消息系统。
 <meta property="og:image" content="https://blog.ubyte.me/images/kafka/log_anatomy.png">
 <meta property="og:image" content="https://blog.ubyte.me/images/kafka/log_consumer.png">
 <meta property="og:image" content="https://blog.ubyte.me/images/kafka/consumer-groups.png">
-<meta property="og:updated_time" content="2016-12-13T04:20:17.523Z">
+<meta property="og:updated_time" content="2016-12-13T04:26:16.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="什么是Kafka">
 <meta name="twitter:description" content="跟上一篇什么是ZooKeeper一样，只是简单记录一下初学心得，没有很深入的东西，但应该足够让人知道什么Kafka。
@@ -419,7 +419,7 @@ Kafka 是一个分布式的消息系统。
 <li>并且Consumer读到记录的顺序就是在Partition存储的顺序(接收顺序性)</li>
 <li>并且具有“光杆司令”的容错，复制因子N，容忍N-1个Server挂掉(容错性)。</li>
 </ul>
-<h2 id="Kafka作为消息系统："><a href="#Kafka作为消息系统：" class="headerlink" title="Kafka作为消息系统："></a>Kafka作为消息系统：</h2><p>传统的消息系统分两种模式：</p>
+<h2 id="Kafka作为消息系统"><a href="#Kafka作为消息系统" class="headerlink" title="Kafka作为消息系统"></a>Kafka作为消息系统</h2><p>传统的消息系统分两种模式：</p>
 <ol>
 <li>队列模式： 平衡分配任务给多个Consumer扩展处理；但是不能发送给多个Consumer。</li>
 <li>Pub/Sub发布订阅模式： 可一个广播给每个订阅者； 但是不能扩展处理。</li>
@@ -427,7 +427,7 @@ Kafka 是一个分布式的消息系统。
 <p>Kafka归纳了两种模式，对于不同的Consumer Group，是Pub/Sub发布订阅模式; 对于Consumer Group中的每个Consumer，是队列模式。</p>
 <p>传统的队列模式只能保证消息在Server的顺序，然而由于消息传递到不同Consumer是异步的，就不能保证到每个Consumer的顺序。Kafka做的比较好，利用Partion和Consumer Group， 使一个Topic的每个Partition分给Group里的每个Consumer并保证每个只有一个Consumer在处理相应的Partition，既保证了顺序又平衡了负载。</p>
 <p>值得注意的是，一个Consumer Group里的Consumer数量不能多余Partition数量，不能一个Partition有多个来自同一个Group的Consumer。</p>
-<h2 id="Kafka作为存储系统："><a href="#Kafka作为存储系统：" class="headerlink" title="Kafka作为存储系统："></a>Kafka作为存储系统：</h2><p>Kafka把记录存储到硬盘并复制保证容错，并用写操作确认来保证producer发布的记录被完全复制完毕。</p>
+<h2 id="Kafka作为存储系统"><a href="#Kafka作为存储系统" class="headerlink" title="Kafka作为存储系统"></a>Kafka作为存储系统</h2><p>Kafka把记录存储到硬盘并复制保证容错，并用写操作确认来保证producer发布的记录被完全复制完毕。</p>
 <p>Kafka性能不收数据大小影响，即使对TB级以上数据也能保证常数时间复杂度的访问性能。</p>
 <p>Kafka允许Consumer控制Offset读取记录。</p>
 <p>综上所述，Kafka可以当做高性能，低延迟的分布式文件系统。</p>
@@ -619,7 +619,7 @@ Kafka 是一个分布式的消息系统。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Kafka"><span class="nav-number">1.</span> <span class="nav-text">什么是Kafka</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关概念-流系统，Topic，Partition-分布式，Consumer-Group"><span class="nav-number">2.</span> <span class="nav-text">相关概念- 流系统，Topic，Partition, 分布式，Consumer Group</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流系统-Stream-Platform"><span class="nav-number">2.1.</span> <span class="nav-text">流系统- Stream Platform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Topics-and-Partition-Logs"><span class="nav-number">2.2.</span> <span class="nav-text">Topics and Partition Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式"><span class="nav-number">2.3.</span> <span class="nav-text">分布式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Producer和Consumer-Group"><span class="nav-number">2.4.</span> <span class="nav-text">Producer和Consumer Group</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka作为消息系统："><span class="nav-number">3.</span> <span class="nav-text">Kafka作为消息系统：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka作为存储系统："><span class="nav-number">4.</span> <span class="nav-text">Kafka作为存储系统：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka信息流处理"><span class="nav-number">5.</span> <span class="nav-text">Kafka信息流处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Kafka"><span class="nav-number">1.</span> <span class="nav-text">什么是Kafka</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关概念-流系统，Topic，Partition-分布式，Consumer-Group"><span class="nav-number">2.</span> <span class="nav-text">相关概念- 流系统，Topic，Partition, 分布式，Consumer Group</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流系统-Stream-Platform"><span class="nav-number">2.1.</span> <span class="nav-text">流系统- Stream Platform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Topics-and-Partition-Logs"><span class="nav-number">2.2.</span> <span class="nav-text">Topics and Partition Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式"><span class="nav-number">2.3.</span> <span class="nav-text">分布式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Producer和Consumer-Group"><span class="nav-number">2.4.</span> <span class="nav-text">Producer和Consumer Group</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka作为消息系统"><span class="nav-number">3.</span> <span class="nav-text">Kafka作为消息系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka作为存储系统"><span class="nav-number">4.</span> <span class="nav-text">Kafka作为存储系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka信息流处理"><span class="nav-number">5.</span> <span class="nav-text">Kafka信息流处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
